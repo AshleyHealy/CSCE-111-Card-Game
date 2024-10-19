@@ -56,7 +56,7 @@ public class Crazy7 {
 
         // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
         // any card lower than 7
-        System.out.println(ComputerTurn(cardDeck.get(0), computerHand));
+        System.out.println("The Computer played: "+ComputerTurn(cardDeck.get(0), computerHand));
 
     }
 
