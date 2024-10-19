@@ -26,6 +26,8 @@ public static void main(String[] args){
   // Create The Card deck
   
   ArrayList<String> cardDeck = new ArrayList<String>();
+  ArrayList<String> playerHand = new ArrayList<String>();
+  ArrayList<String> computerHand = new ArrayList<String>();
         String[] suit = { "H", "S", "C", "D" };
         // for each element in the suit array...
         for (String element : suit) {
