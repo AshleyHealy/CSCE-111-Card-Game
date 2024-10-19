@@ -47,11 +47,17 @@ public static void main(String[] args){
 
 
   // Create Player Hand
-  
+          for (int i = 0; i < 7; i++) {
+            playerHand.add(cardDeck.get(i));
+            cardDeck.remove(i);
+            computerHand.add(cardDeck.get(i));
+            cardDeck.remove(i);
+        }
 
   // Method for Flipping over the Top card 
   // Display the flipped over card 
-
+        System.out.println("Your Cards: " + playerHand);
+        System.out.println("Fipped over card is: " + cardDeck.get(0));
   
   // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play any card lower than 7
 
