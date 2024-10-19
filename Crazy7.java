@@ -16,5 +16,5 @@ public static void main(String[] args){
   System.out.println("If an Ace or King is played then a new card is flipped over from the deck");
 
 
-  
+  }
 }
