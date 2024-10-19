@@ -49,9 +49,11 @@ public static void main(String[] args){
   // Create Player Hand
   
 
-  // Flipping over the Top card 
+  // Method for Flipping over the Top card 
   // Display the flipped over card 
-  // If it is between 7 and 13 play any card higher than 7, if 1 through 7 play any card lower than 7
+
+  
+  // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play any card lower than 7
 
 
   
