@@ -17,7 +17,7 @@ public static void main(String[] args){
   System.out.println("If you play the same card that was flipped over you play any other card of your choosing");
   System.out.println("If a player can't play a necessary card the player draws one from the deck");
   System.out.println("If niether player can play then a new card is flipped from the deck");
-  System.out.println("If an Ace or King is played then a new card is flipped over from the deck");
+  System.out.println("If an Ace or King is played then a new card is flipped over from the deck \n");
 
 
 
