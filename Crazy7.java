@@ -1,6 +1,9 @@
 public class Crazy7 {
 public static void main(String[] args){
   ArrayList<String> cardDeck = new ArrayList<String>;
+
+
+// Intro Statements
   System.out.println("Crazy 7s!");
   System.out.println("Objective: Get Rid of all your cards");
   System.out.println("Rules:");
@@ -16,5 +19,15 @@ public static void main(String[] args){
   System.out.println("If an Ace or King is played then a new card is flipped over from the deck");
 
 
+
+
+// Create the Players hands and the Card deck
+
+
+
+
+
+
+  
   }
 }
