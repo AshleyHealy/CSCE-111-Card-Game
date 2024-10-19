@@ -3,6 +3,9 @@ import java.util.*;
 public class Crazy7 {
 
     public static void main(String[] args) {
+        // Scanner
+        Scanner scnr = new Scanner(System.in);
+        
         // Intro Statements
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
