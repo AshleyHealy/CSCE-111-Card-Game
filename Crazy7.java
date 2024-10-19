@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class crazySevenPersonalFile {
+public class Crazy7 {
 
     public static void main(String[] args) {
         // Intro Statements
