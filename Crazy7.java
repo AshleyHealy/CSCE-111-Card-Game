@@ -23,7 +23,7 @@ public static void main(String[] args){
 
   // Create the Players hands and the Card deck
   
-  ArrayList<String> cardDeck = new ArrayList<String>;
+  ArrayList<String> cardDeck = new ArrayList<String>();
 
 
 
