@@ -2,8 +2,7 @@ import java.util.*;
 
 public class Crazy7 {
 public static void main(String[] args){
-  
-
+  Scanner scnr = new Scanner(System.in);
 
   // Intro Statements
   System.out.println("\t\tCrazy 7s!");
@@ -55,13 +54,19 @@ public static void main(String[] args){
             computerHand.add(cardDeck.get(i));
             cardDeck.remove(i);
         }
-
-  // Method for Flipping over the Top card 
+  
   // Display the flipped over card 
         System.out.println("Your Cards: " + playerHand);
         System.out.println("Fipped over card is: " + cardDeck.get(0));
+
+
+  // Give player the option to enter in their card of choice
+
   
-  // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play any card lower than 7
+  
+  // Computer Method
+
+  
 
 
   
