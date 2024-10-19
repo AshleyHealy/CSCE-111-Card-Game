@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.*;
+
 public class Crazy7 {
 public static void main(String[] args){
   
@@ -42,7 +44,7 @@ public static void main(String[] args){
 
 
   // Shuffling the Card Deck 
-
+        Collections.shuffle(cardDeck);
   
   }
 }
