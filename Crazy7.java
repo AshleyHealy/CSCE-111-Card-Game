@@ -24,7 +24,20 @@ public static void main(String[] args){
   // Create the Players hands and the Card deck
   
   ArrayList<String> cardDeck = new ArrayList<String>();
-
+        String[] suit = { "H", "S", "C", "D" };
+        // for each element in the suit array...
+        for (String element : suit) {
+            cardDeck.add(element + "A");
+            // assign the number value cards (2-9)
+            for (int num = 2; num <= 10; num++) {
+                cardDeck.add(element + num);
+            }
+            // assign the face value cards and increment index for the next suit
+            cardDeck.add(element + "J");
+            cardDeck.add(element + "Q");
+            cardDeck.add(element + "K");
+        }
+        System.out.println(cardDeck);
 
 
 
