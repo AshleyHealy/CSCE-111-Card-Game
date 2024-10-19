@@ -1,11 +1,8 @@
 import java.util.*;
 
-public class Crazy7 {
+public class crazySevenPersonalFile {
 
     public static void main(String[] args) {
-        // Scanner
-        Scanner scnr = new Scanner(System.in);
-        
         // Intro Statements
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -58,15 +55,26 @@ public class Crazy7 {
         System.out.println("Flipped over card is: " + flippedCard);
         System.out.println("Computer Cards: " + computerHand);
 
+        if (PlayerTurn(flippedCard, playerHand).equals("Invalid")) {
+            System.out.println("Please choose a valid card.");
+            PlayerTurn(flippedCard, playerHand);
+        } else if (PlayerTurn(flippedCard, playerHand).equals("Draw")) {
+            playerHand.add(cardDeck.get(0));
+            cardDeck.remove(0);
+        } else {
+            flippedCard = PlayerTurn(flippedCard, playerHand);
+        }
+
         // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
         // any card lower than 7
         System.out.println(ComputerTurn(flippedCard, computerHand));
+        System.out.println(PlayerTurn(flippedCard, playerHand));
 
-        if(ComputerTurn(flippedCard, computerHand).equals("Draw")){
+        // after computers turn
+        if (ComputerTurn(flippedCard, computerHand).equals("Draw")) {
             computerHand.add(cardDeck.get(0));
             cardDeck.remove(0);
-        }
-        else{
+        } else {
             flippedCard = ComputerTurn(flippedCard, computerHand);
         }
 
@@ -103,5 +111,28 @@ public class Crazy7 {
             computerPlay = "Draw";
         }
         return computerPlay;
+    }
+
+    public static String PlayerTurn(String flippedCard, ArrayList<String> playerHand) {
+        String validatedPlay = "";
+        Scanner scnr = new Scanner(System.in);
+        String playerPlay = scnr.next();
+        char cardNumber = playerPlay.charAt(1);
+        if ((cardNumber > 7 || cardNumber == 'K' || cardNumber == 'Q' || cardNumber == 'J')
+                && (flippedCard.charAt(1) > 7 || flippedCard.charAt(1) == 'J' || flippedCard.charAt(1) == 'Q'
+                        || flippedCard.charAt(1) == 'K')) {
+            validatedPlay = playerPlay;
+        } else if ((cardNumber < 7 || cardNumber == 'A')
+                && (flippedCard.charAt(1) < 7 || flippedCard.charAt(1) == 'A')) {
+            validatedPlay = playerPlay;
+        } else if (cardNumber == 7) {
+            validatedPlay = playerPlay;
+        } else if (playerPlay.equals("Draw")) {
+            validatedPlay = playerPlay;
+        } else {
+            validatedPlay = "Invalid";
+        }
+
+        return validatedPlay;
     }
 }
