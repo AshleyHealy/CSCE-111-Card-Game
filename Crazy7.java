@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Crazy7 {
 public static void main(String[] args){
   
