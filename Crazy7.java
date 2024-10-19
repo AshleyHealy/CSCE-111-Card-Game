@@ -50,16 +50,25 @@ public class Crazy7 {
             computerHand.add(cardDeck.get(i));
             cardDeck.remove(i);
         }
-
+        String flippedCard = cardDeck.get(0);
+        cardDeck.remove(0);
         // Method for Flipping over the Top card
         // Display the flipped over card
         System.out.println("Your Cards: " + playerHand);
-        System.out.println("Fipped over card is: " + cardDeck.get(0));
+        System.out.println("Flipped over card is: " + flippedCard);
         System.out.println("Computer Cards: " + computerHand);
 
         // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
         // any card lower than 7
-        System.out.println("The Computer played: "+ComputerTurn(cardDeck.get(0), computerHand));
+        System.out.println(ComputerTurn(flippedCard, computerHand));
+
+        if(ComputerTurn(flippedCard, computerHand).equals("Draw")){
+            computerHand.add(cardDeck.get(0));
+            cardDeck.remove(0);
+        }
+        else{
+            flippedCard = ComputerTurn(flippedCard, computerHand);
+        }
 
     }
 
