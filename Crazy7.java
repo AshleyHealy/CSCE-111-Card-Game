@@ -3,7 +3,7 @@ public static void main(String[] args){
   ArrayList<String> cardDeck = new ArrayList<String>;
 
 
-// Intro Statements
+  // Intro Statements
   System.out.println("Crazy 7s!");
   System.out.println("Objective: Get Rid of all your cards");
   System.out.println("Rules:");
@@ -21,7 +21,7 @@ public static void main(String[] args){
 
 
 
-// Create the Players hands and the Card deck
+  // Create the Players hands and the Card deck
 
 
 
