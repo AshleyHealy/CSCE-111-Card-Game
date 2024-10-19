@@ -23,7 +23,7 @@ public static void main(String[] args){
 
 
 
-  // Create the Players hands and the Card deck
+  // Create The Card deck
   
   ArrayList<String> cardDeck = new ArrayList<String>();
         String[] suit = { "H", "S", "C", "D" };
@@ -44,6 +44,10 @@ public static void main(String[] args){
 
   // Shuffling the Card Deck 
         Collections.shuffle(cardDeck);
+
+
+  // Create Player Hand
+  
   
   }
 }
