@@ -48,6 +48,7 @@ public class crazySevenPersonalFile {
             cardDeck.remove(i);
         }
         String flippedCard = cardDeck.get(0);
+        flippedCards.add(flippedCard);
         cardDeck.remove(0);
         // Method for Flipping over the Top card
         // Display the flipped over card
@@ -63,6 +64,7 @@ public class crazySevenPersonalFile {
             cardDeck.remove(0);
         } else {
             flippedCard = PlayerTurn(flippedCard, playerHand);
+            flippedCards.add(flippedCard);
         }
 
         // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
@@ -76,8 +78,14 @@ public class crazySevenPersonalFile {
             cardDeck.remove(0);
         } else {
             flippedCard = ComputerTurn(flippedCard, computerHand);
+            flippedCards.add(flippedCard);
         }
-
+            // reshuffling the card deck
+            if(cardDeck.size()==0){
+            Collections.shuffle(flippedCards);
+            cardDeck = flippedCards;
+            flippedCards.clear();
+            }
     }
 
 
