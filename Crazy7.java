@@ -80,6 +80,8 @@ public class crazySevenPersonalFile {
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
             }
+
+            // if neither players can't play, flip a new card from the deck.
             if (PlayerTurn(flippedCard, playerHand).equals("invalid") && ComputerTurn(flippedCard, playerHand).equals("invalid")){
             System.out.println("Flip a new card from the deck");
             flippedCard = cardDeck.remove(0);
