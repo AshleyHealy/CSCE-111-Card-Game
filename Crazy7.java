@@ -80,6 +80,12 @@ public class crazySevenPersonalFile {
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
             }
+            if (PlayerTurn(flippedCard, playerHand).equals("invalid") && ComputerTurn(flippedCard, playerHand).equals("invalid")){
+            System.out.println("Flip a new card from the deck");
+            flippedCard = cardDeck.remove(0);
+            System.out.println(flippedCard);
+            flippedCards.add(flippedCard);
+            }
         }
 
     }
