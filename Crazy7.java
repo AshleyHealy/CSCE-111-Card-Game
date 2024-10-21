@@ -54,6 +54,7 @@ public class crazySevenPersonalFile {
         System.out.println("Your Cards: " + playerHand);
         System.out.println("Flipped over card is: " + flippedCard);
         System.out.println("Computer Cards: " + computerHand);
+        System.out.println("What would you like to play? Type 'Draw' if you need to draw");
 
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
             if (PlayerTurn(flippedCard, playerHand).equals("Invalid")) {
@@ -69,24 +70,31 @@ public class crazySevenPersonalFile {
 
             // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
             // any card lower than 7
-            System.out.println(ComputerTurn(flippedCard, computerHand));
-            System.out.println(PlayerTurn(flippedCard, playerHand));
 
             // after computers turn
             if (ComputerTurn(flippedCard, computerHand).equals("Draw")) {
                 computerHand.add(cardDeck.get(0));
                 cardDeck.remove(0);
+                System.out.println("Computer had to draw.");
+                System.out.println("Flipped card is: " + flippedCard);
+                System.out.println("Your hand: " + playerHand);
+                System.out.println("What would you like to play? Type 'Draw' if you need to draw");
+
             } else {
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
-            }
+                System.out.println("Flipped card is: " + flippedCard);
+                System.out.println("Your hand: " + playerHand);
+                System.out.println("What would you like to play? Type 'Draw' if you need to draw");
 
+            }
             // if neither players can't play, flip a new card from the deck.
-            if (PlayerTurn(flippedCard, playerHand).equals("invalid") && ComputerTurn(flippedCard, playerHand).equals("invalid")){
-            System.out.println("Flip a new card from the deck");
-            flippedCard = cardDeck.remove(0);
-            System.out.println(flippedCard);
-            flippedCards.add(flippedCard);
+            if (PlayerTurn(flippedCard, playerHand).equals("invalid")
+                    && ComputerTurn(flippedCard, playerHand).equals("invalid")) {
+                System.out.println("Flip a new card from the deck");
+                flippedCard = cardDeck.remove(0);
+                System.out.println(flippedCard);
+                flippedCards.add(flippedCard);
             }
         }
 
