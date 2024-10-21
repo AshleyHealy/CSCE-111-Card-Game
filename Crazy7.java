@@ -48,7 +48,6 @@ public class crazySevenPersonalFile {
             cardDeck.remove(i);
         }
         String flippedCard = cardDeck.get(0);
-        flippedCards.add(flippedCard);
         cardDeck.remove(0);
         // Method for Flipping over the Top card
         // Display the flipped over card
@@ -56,47 +55,34 @@ public class crazySevenPersonalFile {
         System.out.println("Flipped over card is: " + flippedCard);
         System.out.println("Computer Cards: " + computerHand);
 
-        if (PlayerTurn(flippedCard, playerHand).equals("Invalid")) {
-            System.out.println("Please choose a valid card.");
-            PlayerTurn(flippedCard, playerHand);
-        } else if (PlayerTurn(flippedCard, playerHand).equals("Draw")) {
-            playerHand.add(cardDeck.get(0));
-            cardDeck.remove(0);
-        } else {
-            flippedCard = PlayerTurn(flippedCard, playerHand);
-            flippedCards.add(flippedCard);
-        }
-
-        // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
-        // any card lower than 7
-        System.out.println(ComputerTurn(flippedCard, computerHand));
-        System.out.println(PlayerTurn(flippedCard, playerHand));
-
-        // after computers turn
-        if (ComputerTurn(flippedCard, computerHand).equals("Draw")) {
-            computerHand.add(cardDeck.get(0));
-            cardDeck.remove(0);
-        } else {
-            flippedCard = ComputerTurn(flippedCard, computerHand);
-            flippedCards.add(flippedCard);
-        }
-            // reshuffling the card deck
-            if(cardDeck.size()==0){
-            Collections.shuffle(flippedCards);
-            cardDeck = flippedCards;
-            flippedCards.clear();
+        while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
+            if (PlayerTurn(flippedCard, playerHand).equals("Invalid")) {
+                System.out.println("Please choose a valid card.");
+                PlayerTurn(flippedCard, playerHand);
+            } else if (PlayerTurn(flippedCard, playerHand).equals("Draw")) {
+                playerHand.add(cardDeck.get(0));
+                cardDeck.remove(0);
+            } else {
+                flippedCard = PlayerTurn(flippedCard, playerHand);
+                flippedCards.add(flippedCard);
             }
 
-        // if neither players can't play, then flipped a card from the deck
-        if (PlayerTurn(flippedCard, playerHand).equals("invalid") && ComputerTurn(flippedCard, playerHand).equals("invalid")){
-            System.out.println("Flip a new card from the deck");
-            flippedCard = cardDeck.remove(0);
-            System.out.println(flippedCard);
-            flippedCards.add(flippedCard);
+            // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
+            // any card lower than 7
+            System.out.println(ComputerTurn(flippedCard, computerHand));
+            System.out.println(PlayerTurn(flippedCard, playerHand));
 
+            // after computers turn
+            if (ComputerTurn(flippedCard, computerHand).equals("Draw")) {
+                computerHand.add(cardDeck.get(0));
+                cardDeck.remove(0);
+            } else {
+                flippedCard = ComputerTurn(flippedCard, computerHand);
+                flippedCards.add(flippedCard);
+            }
         }
-    }
 
+    }
 
     // Computers turn method
     public static String ComputerTurn(String flippedCard, ArrayList<String> computerHand) {
@@ -152,7 +138,6 @@ public class crazySevenPersonalFile {
         } else {
             validatedPlay = "Invalid";
         }
-
         return validatedPlay;
     }
 }
