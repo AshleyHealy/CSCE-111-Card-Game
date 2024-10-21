@@ -80,6 +80,8 @@ public class crazySevenPersonalFile {
 
     }
 
+
+    // Computers turn method
     public static String ComputerTurn(String flippedCard, ArrayList<String> computerHand) {
         String computerPlay = "";
         if (flippedCard.charAt(1) > 7 || flippedCard.charAt(1) == 'J' || flippedCard.charAt(1) == 'Q'
@@ -113,6 +115,7 @@ public class crazySevenPersonalFile {
         return computerPlay;
     }
 
+    // Players turn method
     public static String PlayerTurn(String flippedCard, ArrayList<String> playerHand) {
         String validatedPlay = "";
         Scanner scnr = new Scanner(System.in);
