@@ -63,9 +63,11 @@ public class crazySevenPersonalFile {
             } else if (PlayerTurn(flippedCard, playerHand).equals("Draw")) {
                 playerHand.add(cardDeck.get(0));
                 cardDeck.remove(0);
+                System.out.println("You successfuly drew a card");
             } else {
                 flippedCard = PlayerTurn(flippedCard, playerHand);
                 flippedCards.add(flippedCard);
+                System.out.println("You card has been played");
             }
 
             // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
