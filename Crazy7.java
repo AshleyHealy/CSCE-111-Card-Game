@@ -53,8 +53,9 @@ public class crazySevenPersonalFile {
         // Display the flipped over cardD
 
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
-            System.out.println("Your Cards: " + playerHand);
+            System.out.println("Computer Hand: " + computerHand);
             System.out.println("Flipped over card is: " + flippedCard);
+            System.out.println("Your Cards: " + playerHand);
             System.out.println("What would you like to play? Type 'Draw' if you need to draw");
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
@@ -63,6 +64,7 @@ public class crazySevenPersonalFile {
             } else if (flippedCard.equals("Draw")) {
                 playerHand.add(cardDeck.get(0));
                 cardDeck.remove(0);
+                flippedCard = flippedCards.get(flippedCards.size() - 1);
             } else {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
@@ -81,8 +83,8 @@ public class crazySevenPersonalFile {
 
             } else {
                 flippedCards.add(flippedCard);
+                computerHand.remove(flippedCard);
                 System.out.println("Computer Played: " + flippedCard);
-
             }
             // if neither players can't play, flip a new card from the deck.
             if (flippedCard.equals("invalid")
@@ -99,19 +101,29 @@ public class crazySevenPersonalFile {
     // Computers turn method
     public static String ComputerTurn(String flippedCard, ArrayList<String> computerHand) {
         String computerPlay = "";
-        if (flippedCard.charAt(1) > 7 || flippedCard.charAt(1) == 'J' || flippedCard.charAt(1) == 'Q'
-                || flippedCard.charAt(1) == 'K') {
+        char cardNumber = flippedCard.charAt(1);
+        if ((Character.isDigit(cardNumber)
+                && (Character.getNumericValue(cardNumber) > 7 || Character.getNumericValue(cardNumber) == 1))
+                || flippedCard.charAt(1) == 'J' || flippedCard.charAt(1) == 'Q' || flippedCard.charAt(1) == 'K') {
             for (String card : computerHand) {
-                char cardNumber = card.charAt(1);
-                if (cardNumber > 7 || cardNumber == 'J' || cardNumber == 'Q' || cardNumber == 'K') {
+                char compCardNumber = card.charAt(1);
+                if ((Character.isDigit(compCardNumber) && (Character.getNumericValue(compCardNumber) > 7
+                        || Character.getNumericValue(cardNumber) == 1))
+                        || compCardNumber == 'J' || compCardNumber == 'Q' || compCardNumber == 'K') {
                     computerPlay = card;
+                    break;
                 }
             }
-        } else if (flippedCard.charAt(1) < 7 || flippedCard.charAt(1) == 'A') {
+        } else if ((Character.isDigit(cardNumber) && Character.getNumericValue(cardNumber) < 7
+                && Character.getNumericValue(cardNumber) != 1)
+                || flippedCard.charAt(1) == 'A') {
             for (String card : computerHand) {
-                char cardNumber = card.charAt(1);
-                if (cardNumber < 7 || cardNumber == 'A') {
+                char compCardNumber = card.charAt(1);
+                if ((Character.isDigit(compCardNumber) && Character.getNumericValue(compCardNumber) < 7
+                        && Character.getNumericValue(cardNumber) != 1)
+                        || compCardNumber == 'A') {
                     computerPlay = card;
+                    break;
                 }
             }
         }
@@ -119,13 +131,16 @@ public class crazySevenPersonalFile {
         else if (computerHand.contains("H7") || computerHand.contains("D7") || computerHand.contains("S7")
                 || computerHand.contains("C7")) {
             for (String card : computerHand) {
-                char cardNumber = card.charAt(1);
-                if (cardNumber == 7) {
+                char compCardNumber = card.charAt(1);
+                if (compCardNumber == 7) {
                     computerPlay = card;
+                    break;
                 }
             }
         } else {
             computerPlay = "Draw";
+            System.out.println("Computer had to draw!");
+
         }
         return computerPlay;
     }
@@ -150,7 +165,6 @@ public class crazySevenPersonalFile {
         } else {
             validatedPlay = "Invalid";
         }
-        System.out.println("Test hopefully this shows");
         return validatedPlay;
     }
 }
