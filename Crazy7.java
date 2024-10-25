@@ -53,7 +53,7 @@ public class crazy7 {
         // Method for Flipping over the Top card
         // Display the flipped over cardD
 
-        while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
+        while (!computerHand.isEmpty() && !playerHand.isEmpty()) {
             System.out.println("Computer Hand: " + computerHand);
             System.out.println("Flipped over card is: " + flippedCard);
             System.out.println("Your Cards: " + playerHand);
@@ -83,7 +83,11 @@ public class crazy7 {
                 playerHand.remove(flippedCard);
                 System.out.println("Successful turn!");
             }
-
+            // checks if users hand is empty
+            if (playerHand.isEmpty()) {
+                System.out.println("Player wins!");
+                System.exit(0);
+            }
             // If Card is between 7 and 13 play any card higher than 7, if 1 through 7 play
             // any card lower than 7
             // after computers turn
@@ -113,7 +117,13 @@ public class crazy7 {
                 flippedCards.add(flippedCard);
             }
         }
-
+        if (playerHand.isEmpty()) {
+            System.out.println("Player wins!");
+            System.exit(0);
+        } else {
+            System.out.println("Computer wins!");
+            System.exit(0);
+        }
     }
 
     // Computers turn method
