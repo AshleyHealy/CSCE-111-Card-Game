@@ -206,7 +206,6 @@ public class crazy7 {
         if (((Character.isDigit(cardNumber.charAt(0)) && (Integer.parseInt(cardNumber) >= 7))
                 || flippedCard.charAt(1) == 'J' || flippedCard.charAt(1) == 'Q' || flippedCard.charAt(1) == 'K') && ((Character.isDigit(playerNumber.charAt(0)) && (Integer.parseInt(playerNumber) >= 7))
                 || playerPlay.charAt(1) == 'J' || playerPlay.charAt(1) == 'Q' || playerPlay.charAt(1) == 'K')) {
-            System.out.println("Here");
             validatedPlay = playerPlay;
         } else if (((Character.isDigit(cardNumber.charAt(0)) && Integer.parseInt(cardNumber) <= 7) || flippedCard.charAt(1) == 'A') && ((Character.isDigit(playerNumber.charAt(0)) && Integer.parseInt(playerNumber) <= 7) || playerPlay.charAt(1) == 'A')) {
             validatedPlay = playerPlay;
