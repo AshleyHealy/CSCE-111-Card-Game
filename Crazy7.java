@@ -3,11 +3,9 @@ import java.util.*;
 
 public class crazy7 {
 
-    // allows you to get the same case over and over for debugging
-    //To find the case you want to change the number inside the random function and add ,r to the inside of the parenthesis of the shuffle function
-    //Random r = new Random(0);
     public static void main(String[] args) {
         // Intro Statements
+        Random r = new Random(1);
 
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -42,7 +40,7 @@ public class crazy7 {
             cardDeck.add(element + "K");
         }
         // Shuffling the Card Deck
-        Collections.shuffle(cardDeck);
+        Collections.shuffle(cardDeck, r);
 
         // Create Player Hand
         for (int i = 0; i < 7; i++) {
@@ -66,7 +64,7 @@ public class crazy7 {
             int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
-                 while(flippedCard.equals("Invalid")){
+                while(flippedCard.equals("Invalid")){
                     System.out.println("Please choose a valid card.");
                     flippedCard = flippedCards.get(flippedCards.size() - 1);
                     flippedCard = PlayerTurn(flippedCard, playerHand);
@@ -87,6 +85,17 @@ public class crazy7 {
                 playerHand.remove(flippedCard);
                 System.out.println("Successful turns!");
                 playerCount = 0;
+            } else if(flippedCard.charAt(1)=='K' || flippedCard.charAt(1)=='A'){
+                flippedCards.add(flippedCard);
+                playerHand.remove(flippedCard);
+                System.out.println("Successful turn!");
+                playerCount = 0;
+                computerCount=0;
+                System.out.print("Flip a new card from the deck: ");
+                flippedCard = cardDeck.get(0);
+                cardDeck.remove(0);
+                System.out.println(flippedCard);
+                flippedCards.add(flippedCard);
             } else {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
@@ -107,6 +116,7 @@ public class crazy7 {
                 computerCount = 1;
                 flippedCard = flippedCards.get(flippedCards.size() - 1);
             } else if (flippedCard.charAt(1) == '7') {
+                System.out.println("Computer Played: " + flippedCard);
                 System.out.println("Computer Plays Again");
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
@@ -114,7 +124,19 @@ public class crazy7 {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
                 computerCount = 0;
-            } else {
+            } else if(flippedCard.charAt(1)=='K' || flippedCard.charAt(1)=='A'){
+                System.out.println("Computer Played: " + flippedCard);
+                flippedCards.add(flippedCard);
+                computerHand.remove(flippedCard);
+                playerCount = 0;
+                computerCount=0;
+                System.out.print("Flip a new card from the deck: ");
+                flippedCard = cardDeck.get(0);
+                cardDeck.remove(0);
+                System.out.println(flippedCard);
+                flippedCards.add(flippedCard);
+            }
+            else {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
                 System.out.println("Computer Played: " + flippedCard);
