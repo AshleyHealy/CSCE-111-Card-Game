@@ -64,8 +64,8 @@ public class crazySevenPersonalFile {
             int playerCount = 0;
             int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
-            if (flippedCard.equals("Invalid")) {
-                while (flippedCard.equals("Invalid")) {
+            if (flippedCard.contains("Invalid")) {
+                while (flippedCard.contains("Invalid")) {
                     System.out.println("Please choose a valid card.");
                     flippedCard = flippedCards.get(flippedCards.size() - 1);
                     flippedCard = PlayerTurn(flippedCard, playerHand);
