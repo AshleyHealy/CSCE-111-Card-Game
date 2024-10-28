@@ -66,9 +66,11 @@ public class crazy7 {
             int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
-                System.out.println("Please choose a valid card.");
-                flippedCard = flippedCards.get(flippedCards.size() - 1);
-                flippedCard = PlayerTurn(flippedCard, playerHand);
+                 while(flippedCard.equals("Invalid")){
+                    System.out.println("Please choose a valid card.");
+                    flippedCard = flippedCards.get(flippedCards.size() - 1);
+                    flippedCard = PlayerTurn(flippedCard, playerHand);
+                }
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
             } else if (flippedCard.equals("Draw")) {
