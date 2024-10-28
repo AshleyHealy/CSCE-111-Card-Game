@@ -132,6 +132,7 @@ public class crazy7 {
                 System.out.println("Computer Plays Again");
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
+                flippedCards.remove("Draw");
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
