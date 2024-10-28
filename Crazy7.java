@@ -96,6 +96,18 @@ public class crazy7 {
                 cardDeck.remove(0);
                 System.out.println(flippedCard);
                 flippedCards.add(flippedCard);
+
+                // If player plays the same card as flipped they can play again
+            } else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
+                System.out.println("Play again:");
+                flippedCards.add(flippedCard);
+                playerHand.remove(flippedCard);
+                flippedCard = PlayerTurn(flippedCard, playerHand);
+                flippedCards.add(flippedCard);
+                playerHand.remove(flippedCard);
+                System.out.println("Successful turns!");
+                playerCount = 0;
+                
             } else {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
