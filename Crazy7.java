@@ -53,14 +53,13 @@ public class crazySevenPersonalFile {
         flippedCards.add(flippedCard);
         // Method for Flipping over the Top card
         // Display the flipped over cardD
-
+        int playerCount = 0;
+        int computerCount = 0;
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
             System.out.println("Computer Hand: " + computerHand);
             System.out.println("Flipped over card is: " + flippedCard);
             System.out.println("Your Cards: " + playerHand);
             System.out.println("What would you like to play? Type 'Draw' if you need to draw");
-            int playerCount = 0;
-            int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
                 while (flippedCard.equals("Invalid")) {
