@@ -4,7 +4,7 @@ public class crazySevenPersonalFile {
 
     public static void main(String[] args) {
         // Intro Statements
-        // Random r = new Random(1);
+        Random r = new Random(4);
 
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -19,6 +19,8 @@ public class crazySevenPersonalFile {
         System.out.println("\tIf a player can't play a necessary card the player draws one from the deck");
         System.out.println("\tIf neither player can play then a new card is flipped from the deck");
         System.out.println("\tIf an Ace or King is played then a new card is flipped over from the deck \n");
+        System.out.println(
+                "\tIf you play a seven or the same value card as the discard, only one additional card can be played.\n");
 
         // Create The Card deck
         ArrayList<String> cardDeck = new ArrayList<String>();
@@ -39,7 +41,7 @@ public class crazySevenPersonalFile {
             cardDeck.add(element + "K");
         }
         // Shuffling the Card Deck
-        Collections.shuffle(cardDeck);
+        Collections.shuffle(cardDeck, r);
 
         // Create Player Hand
         for (int i = 0; i < 7; i++) {
@@ -53,13 +55,14 @@ public class crazySevenPersonalFile {
         flippedCards.add(flippedCard);
         // Method for Flipping over the Top card
         // Display the flipped over cardD
-        int playerCount = 0;
-        int computerCount = 0;
+
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
             System.out.println("Computer Hand: " + computerHand);
             System.out.println("Flipped over card is: " + flippedCard);
             System.out.println("Your Cards: " + playerHand);
             System.out.println("What would you like to play? Type 'Draw' if you need to draw");
+            int playerCount = 0;
+            int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
                 while (flippedCard.equals("Invalid")) {
