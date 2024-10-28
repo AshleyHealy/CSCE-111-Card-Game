@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class crazy7 {
+public class crazySevenPersonalFile {
 
     public static void main(String[] args) {
         // Intro Statements
@@ -54,13 +54,13 @@ public class crazy7 {
         // Method for Flipping over the Top card
         // Display the flipped over cardD
 
-        int playerCount = 0;
-        int computerCount = 0;
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
             System.out.println("Computer Hand: " + computerHand);
             System.out.println("Flipped over card is: " + flippedCard);
             System.out.println("Your Cards: " + playerHand);
             System.out.println("What would you like to play? Type 'Draw' if you need to draw");
+            int playerCount = 0;
+            int computerCount = 0;
             flippedCard = PlayerTurn(flippedCard, playerHand);
             if (flippedCard.equals("Invalid")) {
                 while (flippedCard.equals("Invalid")) {
@@ -112,6 +112,9 @@ public class crazy7 {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
                 flippedCard = PlayerTurn(flippedCard, playerHand);
+                if (flippedCard.contains("Invalid")) {
+                    flippedCard = flippedCard.substring(0, 2);
+                }
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
                 System.out.println("Successful turns!");
@@ -162,8 +165,7 @@ public class crazy7 {
                 cardDeck.remove(0);
                 System.out.println(flippedCard);
                 flippedCards.add(flippedCard);
-            } 
-            else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
+            } else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
                 // checks if they just played their last card and don't have another to play
                 if (computerHand.isEmpty()) {
                     System.out.println("Computer wins!");
@@ -175,8 +177,7 @@ public class crazy7 {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
                 playerCount = 0;
-            }
-            else {
+            } else {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
                 System.out.println("Computer Played: " + flippedCard);
@@ -261,7 +262,7 @@ public class crazy7 {
         } else if (playerPlay.equals("Draw")) {
             validatedPlay = playerPlay;
         } else {
-            validatedPlay = "Invalid";
+            validatedPlay = playerPlay + " is Invalid";
         }
         return validatedPlay;
     }
