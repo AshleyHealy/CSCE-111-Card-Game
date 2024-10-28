@@ -80,6 +80,11 @@ public class crazy7 {
                 System.out.println("Play again:");
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
+                //checks if they just played their last card and don't have another to play
+                if (playerHand.isEmpty()) {
+                    System.out.println("Player wins!");
+                    System.exit(0);
+                }
                 flippedCard = PlayerTurn(flippedCard, playerHand);
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
@@ -132,6 +137,11 @@ public class crazy7 {
                 System.out.println("Computer Plays Again");
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
+                //checks if they just played their last card and don't have another to play
+                if (computerHand.isEmpty()) {
+                    System.out.println("Computer wins!");
+                    System.exit(0);
+                }
                 flippedCards.remove("Draw");
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
