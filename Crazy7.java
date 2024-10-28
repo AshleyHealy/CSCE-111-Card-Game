@@ -5,7 +5,7 @@ public class crazy7 {
 
     public static void main(String[] args) {
         // Intro Statements
-        Random r = new Random(1);
+        //Random r = new Random(1);
 
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -40,7 +40,7 @@ public class crazy7 {
             cardDeck.add(element + "K");
         }
         // Shuffling the Card Deck
-        Collections.shuffle(cardDeck, r);
+        Collections.shuffle(cardDeck);
 
         // Create Player Hand
         for (int i = 0; i < 7; i++) {
