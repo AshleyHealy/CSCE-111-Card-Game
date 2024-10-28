@@ -174,11 +174,11 @@ public class crazySevenPersonalFile {
                     System.exit(0);
                 }
                 flippedCards.add(flippedCard);
-                playerHand.remove(flippedCard);
-                flippedCard = ComputerTurn(flippedCard, playerHand);
+                computerHand.remove(flippedCard);
+                flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
-                playerHand.remove(flippedCard);
-                playerCount = 0;
+                computerHand.remove(flippedCard);
+                computerCount = 0;
             } else {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
