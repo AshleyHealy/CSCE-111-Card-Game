@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class crazySevenPersonalFile {
+public class crazy7 {
 
     public static void main(String[] args) {
         // Intro Statements
-        Random r = new Random(4);
+        Random r = new Random(22);
 
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -19,8 +19,7 @@ public class crazySevenPersonalFile {
         System.out.println("\tIf a player can't play a necessary card the player draws one from the deck");
         System.out.println("\tIf neither player can play then a new card is flipped from the deck");
         System.out.println("\tIf an Ace or King is played then a new card is flipped over from the deck \n");
-        System.out.println(
-                "\tIf you play a seven or the same value card as the discard, only one additional card can be played.\n");
+        System.out.println("\tIf you play a seven or the same value card as the discard, only one additional card can be played.\n");
 
         // Create The Card deck
         ArrayList<String> cardDeck = new ArrayList<String>();
@@ -153,6 +152,7 @@ public class crazySevenPersonalFile {
                 computerHand.remove(flippedCard);
                 flippedCards.remove("Draw");
                 flippedCard = ComputerTurn(flippedCard, computerHand);
+                System.out.println("Computer Played: " + flippedCard);
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
                 computerCount = 0;
@@ -168,6 +168,7 @@ public class crazySevenPersonalFile {
                 System.out.println(flippedCard);
                 flippedCards.add(flippedCard);
             } else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
+                System.out.println("Computer Played: " + flippedCard);
                 // checks if they just played their last card and don't have another to play
                 if (computerHand.isEmpty()) {
                     System.out.println("Computer wins!");
@@ -178,7 +179,7 @@ public class crazySevenPersonalFile {
                 flippedCard = ComputerTurn(flippedCard, computerHand);
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
-                computerCount = 0;
+                playerCount = 0;
             } else {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
