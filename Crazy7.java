@@ -5,7 +5,8 @@ public class crazy7 {
 
     public static void main(String[] args) {
         // Intro Statements
-        Random r = new Random(22);
+        //Luke R
+        //Random r = new Random(22);
 
         System.out.println("\t\tCrazy 7s!");
         System.out.println("Objective: Get Rid of all your cards");
@@ -41,7 +42,7 @@ public class crazy7 {
             cardDeck.add(element + "K");
         }
         // Shuffling the Card Deck
-        Collections.shuffle(cardDeck, r);
+        Collections.shuffle(cardDeck);
 
         // Create Player Hand
         for (int i = 0; i < 7; i++) {
@@ -66,6 +67,7 @@ public class crazy7 {
             // asks for input
             System.out.println("What would you like to play? Type 'Draw' if you need to draw");
             // variables for tracking draw
+            // Luke R
             int playerCount = 0;
             int computerCount = 0;
             // calling player turn
@@ -100,7 +102,8 @@ public class crazy7 {
                 playerHand.remove(flippedCard);
                 System.out.println("Successful turns!");
                 playerCount = 0;
-            } //checking if the user played a king or a seven 
+            } //checking if the user played a king or an ace
+                // Luke R
             else if (flippedCard.charAt(1) == 'K' || flippedCard.charAt(1) == 'A') {
                 flippedCards.add(flippedCard);
                 playerHand.remove(flippedCard);
@@ -140,6 +143,7 @@ public class crazy7 {
                 System.out.println("Successful turn!");
                 playerCount = 0;
             }// cheks if the player is out of cards
+            // Luke R
             if (playerHand.isEmpty()) {
                 System.out.println("Player wins!");
                 System.exit(0);
@@ -172,6 +176,7 @@ public class crazy7 {
                 computerHand.remove(flippedCard);
                 computerCount = 0;
             } // checking if the computer played a king or an ace
+                // Luke R
             else if (flippedCard.charAt(1) == 'K' || flippedCard.charAt(1) == 'A') {
                 System.out.println("Computer Played: " + flippedCard);
                 flippedCards.add(flippedCard);
@@ -205,6 +210,7 @@ public class crazy7 {
                 computerCount = 0;
             }
             // if neither players can't play, flip a new card from the deck.
+            // Lukke R
             if ((playerCount == 1) && (computerCount == 1)) {
                 System.out.print("Flip a new card from the deck: ");
                 flippedCard = cardDeck.get(0);
