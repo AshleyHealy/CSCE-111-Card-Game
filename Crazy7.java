@@ -119,7 +119,7 @@ public class crazy7 {
                 System.out.println(flippedCard);
                 flippedCards.add(flippedCard);
 
-                // Ashley H.
+                // Ashley H. , juiyun 
                 // If player plays the same card as flipped they can play again
             } else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
                 // checks if they just played their last card and don't have another to play
@@ -214,7 +214,7 @@ public class crazy7 {
                 computerCount = 0;
             }
             // if neither players can't play, flip a new card from the deck.
-            // Lukke R
+            // Lukke R, juiyun
             if ((playerCount == 1) && (computerCount == 1)) {
                 System.out.print("Flip a new card from the deck: ");
                 flippedCard = cardDeck.get(0);
