@@ -24,6 +24,7 @@ public class crazy7 {
         System.out.println("\tIf you play a seven or the same value card as the discard, only one additional card can be played.\n");
 
         // Create The Card deck
+        //Olivia Knapp
         ArrayList<String> cardDeck = new ArrayList<String>();
         ArrayList<String> playerHand = new ArrayList<String>();
         ArrayList<String> flippedCards = new ArrayList<String>();
@@ -58,6 +59,7 @@ public class crazy7 {
         flippedCards.add(flippedCard);
 
         // while loop that keeps the game running
+        //Olivia Knapp
         while (!computerHand.isEmpty() || !playerHand.isEmpty()) {
             System.out.println("Computer Hand: " + computerHand);
             // shows the flipped over card
@@ -73,6 +75,7 @@ public class crazy7 {
             // calling player turn
             flippedCard = PlayerTurn(flippedCard, playerHand);
             // checking if players play was valid
+            //Olivia Knapp
             if (flippedCard.contains("Invalid")) {
                 while (flippedCard.contains("Invalid")) {
                     System.out.println("Please choose a valid card.");
@@ -148,7 +151,7 @@ public class crazy7 {
                 System.out.println("Player wins!");
                 System.exit(0);
             }
-            
+            //Olivia Knapp
             // calling computers turn
             flippedCard = ComputerTurn(flippedCard, computerHand);
             // checking if the computer drew
@@ -203,6 +206,7 @@ public class crazy7 {
                 computerHand.remove(flippedCard);
                 playerCount = 0;
             } // any other valid play 
+                //Olivia Knapp
             else {
                 flippedCards.add(flippedCard);
                 computerHand.remove(flippedCard);
@@ -230,7 +234,7 @@ public class crazy7 {
             }
         }
     }
-    // Ashley H. 
+    // Ashley H., Olivia Knapp
     // Computers turn method
 
     public static String ComputerTurn(String flippedCard, ArrayList<String> computerHand) {
@@ -281,7 +285,7 @@ public class crazy7 {
         computerPlay = "Draw";
         return computerPlay;
     }
-    // Ashley H.
+    // Ashley H., Olivia Knapp
     // Players turn method
     public static String PlayerTurn(String flippedCard, ArrayList<String> playerHand) {
         String validatedPlay = "";
