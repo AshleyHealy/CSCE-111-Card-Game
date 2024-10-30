@@ -113,6 +113,7 @@ public class crazy7 {
                 System.out.println(flippedCard);
                 flippedCards.add(flippedCard);
 
+                // Ashley H.
                 // If player plays the same card as flipped they can play again
             } else if (flippedCard.charAt(1) == (flippedCards.get(flippedCards.size() - 1).charAt(1))) {
                 // checks if they just played their last card and don't have another to play
@@ -143,6 +144,7 @@ public class crazy7 {
                 System.out.println("Player wins!");
                 System.exit(0);
             }
+            
             // calling computers turn
             flippedCard = ComputerTurn(flippedCard, computerHand);
             // checking if the computer drew
@@ -152,6 +154,7 @@ public class crazy7 {
                 computerCount = 1;
                 flippedCard = flippedCards.get(flippedCards.size() - 1);
             } // checking if the computer played a seven
+             // Ashley H. 
             else if (flippedCard.charAt(1) == '7') {
                 System.out.println("Computer Played: " + flippedCard);
                 // checks if they just played their last card and don't have another to play
@@ -221,6 +224,7 @@ public class crazy7 {
             }
         }
     }
+    // Ashley H. 
     // Computers turn method
 
     public static String ComputerTurn(String flippedCard, ArrayList<String> computerHand) {
@@ -271,7 +275,7 @@ public class crazy7 {
         computerPlay = "Draw";
         return computerPlay;
     }
-
+    // Ashley H.
     // Players turn method
     public static String PlayerTurn(String flippedCard, ArrayList<String> playerHand) {
         String validatedPlay = "";
